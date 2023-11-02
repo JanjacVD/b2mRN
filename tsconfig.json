@@ -1,6 +1,21 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "module": "ESNext",
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true,
+    "allowUnreachableCode": false,
+    "strictFunctionTypes": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*", "src/components/"],
+      "@features/*": ["src/features/*", "src/features/"],
+      "@services/*": ["src/services/*", "src/services/"],
+      "@navigators/*": ["src/navigators/*", "src/navigators/"],
+      "@styles/*": ["src/styles/*", "src/styles/"],
+      "@data/*": ["src/data/*", "src/data/"],
+    },
   }
 }
