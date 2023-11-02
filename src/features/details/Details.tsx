@@ -2,10 +2,13 @@ import Container from "@components/Container";
 import HeadingSmall from "@components/text/HeadingSmall";
 import Paragraph from "@components/text/Paragraph";
 import { LIGHT_BLUE } from "@data/Colors";
-import { Animated, ScrollView, Text, View } from "react-native";
+import { Animated, Linking, ScrollView, Text, View } from "react-native";
 import { Swipeable } from "react-native-gesture-handler";
 
 export default function Details() {
+    const handleOpen = ()=> {
+        Linking.openURL('https://github.com/JanjacVD/b2mRN');
+    }
   const renderLeftView = () => (
     <View
       style={{
@@ -17,7 +20,7 @@ export default function Details() {
         justifyContent: "center",
         alignItems: "center",
       }}
-    ></View>
+    ><Text>{':)'}</Text></View>
   );
   return (
     <Container style={{ flexDirection: "column", alignItems: "center" }}>
@@ -42,7 +45,7 @@ export default function Details() {
           overshootFriction={8}
           enabled
           containerStyle={{ overflow: "hidden" }}
-          onSwipeableWillOpen={(e) => e === "left"}
+          onSwipeableWillOpen={(e) => e === "left" && handleOpen()}
           renderLeftActions={renderLeftView}
         >
           <Animated.View
